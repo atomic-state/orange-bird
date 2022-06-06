@@ -1,6 +1,6 @@
 {
   "name": "orange-bird",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "atomic-state and http-react-fetcher",
   "main": "index.js",
   "keywords": [],

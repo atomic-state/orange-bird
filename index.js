@@ -11,11 +11,8 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.useObject = exports.useBoolean = exports.useFetcher = exports.fetcher = exports.createHttpClient = exports.FetcherConfig = exports.useStorage = exports.useFilter = exports.storage = exports.filter = exports.useDispatch = exports.useActions = exports.useValue = exports.useAtom = exports.atom = exports.AtomicState = exports.FilterGet = exports.Filter = exports.Atom = void 0;
+exports.useObject = exports.useBoolean = exports.useFetcher = exports.fetcher = exports.createHttpClient = exports.FetcherConfig = exports.useStorageItem = exports.useStorage = exports.useFilter = exports.storage = exports.filter = exports.useDispatch = exports.useActions = exports.useValue = exports.useAtom = exports.atom = exports.AtomicState = void 0;
 var atomic_state_1 = require("atomic-state");
-Object.defineProperty(exports, "Atom", { enumerable: true, get: function () { return atomic_state_1.Atom; } });
-Object.defineProperty(exports, "Filter", { enumerable: true, get: function () { return atomic_state_1.Filter; } });
-Object.defineProperty(exports, "FilterGet", { enumerable: true, get: function () { return atomic_state_1.FilterGet; } });
 Object.defineProperty(exports, "AtomicState", { enumerable: true, get: function () { return atomic_state_1.AtomicState; } });
 Object.defineProperty(exports, "atom", { enumerable: true, get: function () { return atomic_state_1.atom; } });
 Object.defineProperty(exports, "useAtom", { enumerable: true, get: function () { return atomic_state_1.useAtom; } });
@@ -26,6 +23,7 @@ Object.defineProperty(exports, "filter", { enumerable: true, get: function () { 
 Object.defineProperty(exports, "storage", { enumerable: true, get: function () { return atomic_state_1.storage; } });
 Object.defineProperty(exports, "useFilter", { enumerable: true, get: function () { return atomic_state_1.useFilter; } });
 Object.defineProperty(exports, "useStorage", { enumerable: true, get: function () { return atomic_state_1.useStorage; } });
+Object.defineProperty(exports, "useStorageItem", { enumerable: true, get: function () { return atomic_state_1.useStorageItem; } });
 var http_react_fetcher_1 = require("http-react-fetcher");
 Object.defineProperty(exports, "FetcherConfig", { enumerable: true, get: function () { return http_react_fetcher_1.FetcherConfig; } });
 Object.defineProperty(exports, "createHttpClient", { enumerable: true, get: function () { return http_react_fetcher_1.createHttpClient; } });
@@ -47,7 +45,7 @@ function useBoolean(initialValue) {
         },
         reset: function () {
             setState(initialValue);
-        }
+        },
     };
     var end = [state, actions];
     return end;
@@ -69,7 +67,7 @@ function useObject(initialValue) {
         },
         reset: function () {
             setState(initialValue);
-        }
+        },
     };
     var end = [state, actions];
     return end;

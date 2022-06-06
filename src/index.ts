@@ -12,6 +12,7 @@ export {
   storage,
   useFilter,
   useStorage,
+  useStorageItem,
 } from "atomic-state"
 
 export {
@@ -38,7 +39,7 @@ export function useBoolean(initialValue = false) {
     },
     reset() {
       setState(initialValue)
-    }
+    },
   }
 
   const end = [state, actions] as [
@@ -63,7 +64,7 @@ export function useObject<T>(initialValue: T) {
       const tm = setTimeout(() => {
         setState((s) => ({
           ...s,
-          ...n
+          ...n,
         }))
         clearTimeout(tm)
       }, 0)
@@ -75,7 +76,7 @@ export function useObject<T>(initialValue: T) {
 
     reset() {
       setState(initialValue)
-    }
+    },
   }
 
   const end = [state, actions] as [
