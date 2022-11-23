@@ -20,6 +20,13 @@ export {
   createHttpClient,
   fetcher,
   useFetcher,
+  useFetcherLoading,
+  useFetcherConfig,
+  useFetcherData,
+  CacheStoreType,
+  mutateData,
+  revalidate,
+  useFetcherError,
 } from "http-react-fetcher"
 
 import { useState } from "react"

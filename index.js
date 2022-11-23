@@ -11,7 +11,7 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.useObject = exports.useBoolean = exports.useFetcher = exports.fetcher = exports.createHttpClient = exports.FetcherConfig = exports.useStorageItem = exports.useStorage = exports.useFilter = exports.storage = exports.filter = exports.useDispatch = exports.useActions = exports.useValue = exports.useAtom = exports.atom = exports.AtomicState = void 0;
+exports.useObject = exports.useBoolean = exports.useFetcherError = exports.revalidate = exports.mutateData = exports.useFetcherData = exports.useFetcherConfig = exports.useFetcherLoading = exports.useFetcher = exports.fetcher = exports.createHttpClient = exports.FetcherConfig = exports.useStorageItem = exports.useStorage = exports.useFilter = exports.storage = exports.filter = exports.useDispatch = exports.useActions = exports.useValue = exports.useAtom = exports.atom = exports.AtomicState = void 0;
 var atomic_state_1 = require("atomic-state");
 Object.defineProperty(exports, "AtomicState", { enumerable: true, get: function () { return atomic_state_1.AtomicState; } });
 Object.defineProperty(exports, "atom", { enumerable: true, get: function () { return atomic_state_1.atom; } });
@@ -29,6 +29,12 @@ Object.defineProperty(exports, "FetcherConfig", { enumerable: true, get: functio
 Object.defineProperty(exports, "createHttpClient", { enumerable: true, get: function () { return http_react_fetcher_1.createHttpClient; } });
 Object.defineProperty(exports, "fetcher", { enumerable: true, get: function () { return http_react_fetcher_1.fetcher; } });
 Object.defineProperty(exports, "useFetcher", { enumerable: true, get: function () { return http_react_fetcher_1.useFetcher; } });
+Object.defineProperty(exports, "useFetcherLoading", { enumerable: true, get: function () { return http_react_fetcher_1.useFetcherLoading; } });
+Object.defineProperty(exports, "useFetcherConfig", { enumerable: true, get: function () { return http_react_fetcher_1.useFetcherConfig; } });
+Object.defineProperty(exports, "useFetcherData", { enumerable: true, get: function () { return http_react_fetcher_1.useFetcherData; } });
+Object.defineProperty(exports, "mutateData", { enumerable: true, get: function () { return http_react_fetcher_1.mutateData; } });
+Object.defineProperty(exports, "revalidate", { enumerable: true, get: function () { return http_react_fetcher_1.revalidate; } });
+Object.defineProperty(exports, "useFetcherError", { enumerable: true, get: function () { return http_react_fetcher_1.useFetcherError; } });
 var react_1 = require("react");
 function useBoolean(initialValue) {
     if (initialValue === void 0) { initialValue = false; }

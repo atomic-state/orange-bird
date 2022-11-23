@@ -1,5 +1,5 @@
 export { Atom, Filter, FilterGet, AtomicState, atom, useAtom, useValue, useActions, useDispatch, filter, storage, useFilter, useStorage, useStorageItem, } from "atomic-state";
-export { FetcherConfig, createHttpClient, fetcher, useFetcher, } from "http-react-fetcher";
+export { FetcherConfig, createHttpClient, fetcher, useFetcher, useFetcherLoading, useFetcherConfig, useFetcherData, CacheStoreType, mutateData, revalidate, useFetcherError, } from "http-react-fetcher";
 export declare function useBoolean(initialValue?: boolean): [boolean, {
     toggle(): void;
     off(): void;
