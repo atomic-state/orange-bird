@@ -36,7 +36,7 @@ export {
 
 import { useState } from "react"
 
-export function useBoolean(initialValue = null) {
+export function useBoolean(initialValue: boolean | null = null as any) {
   const [state, setState] = useState<boolean>(initialValue)
 
   const actions = {
