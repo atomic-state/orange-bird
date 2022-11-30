@@ -13,6 +13,9 @@ export {
   useFilter,
   useStorage,
   useStorageItem,
+  ActionType,
+  ActionsObjectType,
+  useAtomType,
 } from "atomic-state"
 
 export {
@@ -27,12 +30,14 @@ export {
   mutateData,
   revalidate,
   useFetcherError,
+  FetcherInit,
+  useFetcherId,
 } from "http-react-fetcher"
 
 import { useState } from "react"
 
-export function useBoolean(initialValue = false) {
-  const [state, setState] = useState(initialValue)
+export function useBoolean(initialValue = null) {
+  const [state, setState] = useState<boolean>(initialValue)
 
   const actions = {
     toggle() {

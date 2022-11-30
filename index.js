@@ -11,7 +11,7 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.useObject = exports.useBoolean = exports.useFetcherError = exports.revalidate = exports.mutateData = exports.useFetcherData = exports.useFetcherConfig = exports.useFetcherLoading = exports.useFetcher = exports.fetcher = exports.createHttpClient = exports.FetcherConfig = exports.useStorageItem = exports.useStorage = exports.useFilter = exports.storage = exports.filter = exports.useDispatch = exports.useActions = exports.useValue = exports.useAtom = exports.atom = exports.AtomicState = void 0;
+exports.useObject = exports.useBoolean = exports.useFetcherId = exports.useFetcherError = exports.revalidate = exports.mutateData = exports.useFetcherData = exports.useFetcherConfig = exports.useFetcherLoading = exports.useFetcher = exports.fetcher = exports.createHttpClient = exports.FetcherConfig = exports.useStorageItem = exports.useStorage = exports.useFilter = exports.storage = exports.filter = exports.useDispatch = exports.useActions = exports.useValue = exports.useAtom = exports.atom = exports.AtomicState = void 0;
 var atomic_state_1 = require("atomic-state");
 Object.defineProperty(exports, "AtomicState", { enumerable: true, get: function () { return atomic_state_1.AtomicState; } });
 Object.defineProperty(exports, "atom", { enumerable: true, get: function () { return atomic_state_1.atom; } });
@@ -35,9 +35,10 @@ Object.defineProperty(exports, "useFetcherData", { enumerable: true, get: functi
 Object.defineProperty(exports, "mutateData", { enumerable: true, get: function () { return http_react_fetcher_1.mutateData; } });
 Object.defineProperty(exports, "revalidate", { enumerable: true, get: function () { return http_react_fetcher_1.revalidate; } });
 Object.defineProperty(exports, "useFetcherError", { enumerable: true, get: function () { return http_react_fetcher_1.useFetcherError; } });
+Object.defineProperty(exports, "useFetcherId", { enumerable: true, get: function () { return http_react_fetcher_1.useFetcherId; } });
 var react_1 = require("react");
 function useBoolean(initialValue) {
-    if (initialValue === void 0) { initialValue = false; }
+    if (initialValue === void 0) { initialValue = null; }
     var _a = (0, react_1.useState)(initialValue), state = _a[0], setState = _a[1];
     var actions = {
         toggle: function () {
