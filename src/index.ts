@@ -85,7 +85,10 @@ export function useWindowSize() {
     }
   }, [])
 
-  return size
+  return size as {
+    width: number
+    height: number
+  }
 }
 
 export function useBoolean(initialValue: boolean | null = null as any) {
