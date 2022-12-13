@@ -16,25 +16,77 @@ export {
   ActionType,
   ActionsObjectType,
   useAtomType,
+  getAtomValue,
+  getFilterValue,
+  takeSnapshot,
 } from "atomic-state"
 
 export {
-  FetcherConfig,
-  createHttpClient,
-  fetcher,
-  useFetcher,
-  useFetcherLoading,
-  useFetcherConfig,
-  useFetcherData,
   CacheStoreType,
+  FetcherInit,
+  createHttpClient,
+  FetcherConfig,
   mutateData,
   revalidate,
+  useFetcherLoading,
+  useFetcherConfig,
   useFetcherError,
-  FetcherInit,
+  useFetcherData,
+  useImperative,
   useFetcherId,
+  useFetchId,
+  useLoading,
+  useFetcher,
+  useConfig,
+  useFetch,
+  useError,
+  useData,
+  fetcher,
 } from "http-react-fetcher"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
+
+export function useWindowSize() {
+  const [size, setSize] = useState({
+    width: 0,
+    height: 0,
+  })
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      })
+    }
+  }, [])
+
+  useEffect(() => {
+    function resizeListener() {
+      if (typeof window !== "undefined") {
+        setSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        })
+      }
+    }
+    function addResizeListener() {
+      if (typeof window !== "undefined") {
+        window.addEventListener("resize", resizeListener)
+      }
+    }
+
+    addResizeListener()
+
+    return () => {
+      if (typeof window !== "undefined") {
+        window.removeEventListener("resize", resizeListener)
+      }
+    }
+  }, [])
+
+  return size
+}
 
 export function useBoolean(initialValue: boolean | null = null as any) {
   const [state, setState] = useState<boolean>(initialValue)
@@ -67,19 +119,19 @@ export function useBoolean(initialValue: boolean | null = null as any) {
   return end
 }
 
-export function useObject<T>(initialValue: T) {
+export function useObject<T = any>(initialValue: T) {
   const [state, setState] = useState<T>(initialValue)
 
   const actions = {
-    write(f: T | ((e: T) => T)) {
-      const n = typeof f === "function" ? (f as any)(state) : { ...state, ...f }
-      const tm = setTimeout(() => {
-        setState((s) => ({
-          ...s,
-          ...n,
-        }))
-        clearTimeout(tm)
-      }, 0)
+    write(f: Partial<T> | ((e: T) => Partial<T>)) {
+      const n = (
+        typeof f === "function" ? (f as any)(state) : { ...state, ...f }
+      ) as T
+
+      setState((s) => ({
+        ...s,
+        ...n,
+      }))
     },
     replace(f: T | ((e: T) => T)) {
       const n = typeof f === "function" ? (f as any)(state) : f
@@ -94,7 +146,7 @@ export function useObject<T>(initialValue: T) {
   const end = [state, actions] as [
     T,
     {
-      write(f: T | ((e: T) => T)): void
+      write(f: Partial<T> | ((e: T) => Partial<T>)): void
       replace(f: T | ((e: T) => T)): void
       /**
        * Reset to initial value
