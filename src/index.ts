@@ -22,26 +22,44 @@ export {
 } from "atomic-state"
 
 export {
+  // types
   CacheStoreType,
   FetcherInit,
+  // other
   createHttpClient,
   FetcherConfig,
   mutateData,
   revalidate,
+  fetcher,
+  // Hooks
   useFetcherLoading,
   useFetcherConfig,
   useFetcherError,
   useFetcherData,
-  useImperative,
   useFetcherId,
+  useFetcherCode,
+  useFetcherMutate,
+  useFetcher,
+  useImperative,
   useFetchId,
   useLoading,
-  useFetcher,
   useConfig,
   useFetch,
   useError,
   useData,
-  fetcher,
+  useCode,
+  useDELETE,
+  useMutate,
+  useGET,
+  useHEAD,
+  useLINK,
+  useOPTIONS,
+  usePATCH,
+  usePOST,
+  usePURGE,
+  usePUT,
+  useResolve,
+  useUNLINK,
 } from "http-react-fetcher"
 
 import { useState, useEffect } from "react"

@@ -1,5 +1,5 @@
 export { Atom, Filter, FilterGet, AtomicState, atom, useAtom, useValue, useActions, useDispatch, filter, storage, useFilter, useStorage, useStorageItem, ActionType, ActionsObjectType, useAtomType, getAtomValue, getFilterValue, takeSnapshot, } from "atomic-state";
-export { CacheStoreType, FetcherInit, createHttpClient, FetcherConfig, mutateData, revalidate, useFetcherLoading, useFetcherConfig, useFetcherError, useFetcherData, useImperative, useFetcherId, useFetchId, useLoading, useFetcher, useConfig, useFetch, useError, useData, fetcher, } from "http-react-fetcher";
+export { CacheStoreType, FetcherInit, createHttpClient, FetcherConfig, mutateData, revalidate, fetcher, useFetcherLoading, useFetcherConfig, useFetcherError, useFetcherData, useFetcherId, useFetcherCode, useFetcherMutate, useFetcher, useImperative, useFetchId, useLoading, useConfig, useFetch, useError, useData, useCode, useDELETE, useMutate, useGET, useHEAD, useLINK, useOPTIONS, usePATCH, usePOST, usePURGE, usePUT, useResolve, useUNLINK, } from "http-react-fetcher";
 export declare function useWindowSize(): {
     width: number;
     height: number;

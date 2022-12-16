@@ -1,6 +1,6 @@
 {
   "name": "orange-bird",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "atomic-state and http-react-fetcher with extra hooks",
   "main": "index.js",
   "keywords": [],
@@ -8,6 +8,6 @@
   "license": "MIT",
   "dependencies": {
     "atomic-state": "^2.1.6",
-    "http-react-fetcher": "^2.0.1"
+    "http-react-fetcher": "^2.0.5"
   }
 }
