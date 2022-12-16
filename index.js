@@ -1,18 +1,7 @@
 "use strict";
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.useFetcherBlob = exports.useBlob = exports.setURLParams = exports.useUNLINK = exports.useResolve = exports.usePUT = exports.usePURGE = exports.usePOST = exports.usePATCH = exports.useOPTIONS = exports.useLINK = exports.useHEAD = exports.useGET = exports.useMutate = exports.useDELETE = exports.useCode = exports.useData = exports.useError = exports.useFetch = exports.useConfig = exports.useLoading = exports.useFetchId = exports.useImperative = exports.useFetcher = exports.useFetcherMutate = exports.useFetcherCode = exports.useFetcherId = exports.useFetcherData = exports.useFetcherError = exports.useFetcherConfig = exports.useFetcherLoading = exports.fetcher = exports.revalidate = exports.mutateData = exports.FetcherConfig = exports.createHttpClient = exports.takeSnapshot = exports.getFilterValue = exports.getAtomValue = exports.useStorageItem = exports.useStorage = exports.useFilter = exports.storage = exports.filter = exports.useDispatch = exports.useActions = exports.useValue = exports.useAtom = exports.atom = exports.AtomicState = void 0;
-exports.useObject = exports.useBoolean = exports.useWindowSize = exports.useText = exports.useFetcherText = void 0;
+exports.useWindowSize = exports.useObject = exports.useBoolean = exports.useText = exports.useFetcherText = void 0;
 var atomic_state_1 = require("atomic-state");
 Object.defineProperty(exports, "AtomicState", { enumerable: true, get: function () { return atomic_state_1.AtomicState; } });
 Object.defineProperty(exports, "atom", { enumerable: true, get: function () { return atomic_state_1.atom; } });
@@ -69,81 +58,7 @@ Object.defineProperty(exports, "useBlob", { enumerable: true, get: function () {
 Object.defineProperty(exports, "useFetcherBlob", { enumerable: true, get: function () { return http_react_fetcher_1.useFetcherBlob; } });
 Object.defineProperty(exports, "useFetcherText", { enumerable: true, get: function () { return http_react_fetcher_1.useFetcherText; } });
 Object.defineProperty(exports, "useText", { enumerable: true, get: function () { return http_react_fetcher_1.useText; } });
-var react_1 = require("react");
-function useWindowSize() {
-    var _a = (0, react_1.useState)({
-        width: 0,
-        height: 0,
-    }), size = _a[0], setSize = _a[1];
-    (0, react_1.useEffect)(function () {
-        if (typeof window !== "undefined") {
-            setSize({
-                width: window.innerWidth,
-                height: window.innerHeight,
-            });
-        }
-    }, []);
-    (0, react_1.useEffect)(function () {
-        function resizeListener() {
-            if (typeof window !== "undefined") {
-                setSize({
-                    width: window.innerWidth,
-                    height: window.innerHeight,
-                });
-            }
-        }
-        function addResizeListener() {
-            if (typeof window !== "undefined") {
-                window.addEventListener("resize", resizeListener);
-            }
-        }
-        addResizeListener();
-        return function () {
-            if (typeof window !== "undefined") {
-                window.removeEventListener("resize", resizeListener);
-            }
-        };
-    }, []);
-    return size;
-}
-exports.useWindowSize = useWindowSize;
-function useBoolean(initialValue) {
-    if (initialValue === void 0) { initialValue = null; }
-    var _a = (0, react_1.useState)(initialValue), state = _a[0], setState = _a[1];
-    var actions = {
-        toggle: function () {
-            setState(function (s) { return !s; });
-        },
-        off: function () {
-            setState(false);
-        },
-        on: function () {
-            setState(true);
-        },
-        reset: function () {
-            setState(initialValue);
-        },
-    };
-    var end = [state, actions];
-    return end;
-}
-exports.useBoolean = useBoolean;
-function useObject(initialValue) {
-    var _a = (0, react_1.useState)(initialValue), state = _a[0], setState = _a[1];
-    var actions = {
-        write: function (f) {
-            var n = (typeof f === "function" ? f(state) : __assign(__assign({}, state), f));
-            setState(function (s) { return (__assign(__assign({}, s), n)); });
-        },
-        replace: function (f) {
-            var n = typeof f === "function" ? f(state) : f;
-            setState(n);
-        },
-        reset: function () {
-            setState(initialValue);
-        },
-    };
-    var end = [state, actions];
-    return end;
-}
-exports.useObject = useObject;
+var react_kuh_1 = require("react-kuh");
+Object.defineProperty(exports, "useBoolean", { enumerable: true, get: function () { return react_kuh_1.useBoolean; } });
+Object.defineProperty(exports, "useObject", { enumerable: true, get: function () { return react_kuh_1.useObject; } });
+Object.defineProperty(exports, "useWindowSize", { enumerable: true, get: function () { return react_kuh_1.useWindowSize; } });
