@@ -11,7 +11,8 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.useObject = exports.useBoolean = exports.useWindowSize = exports.useUNLINK = exports.useResolve = exports.usePUT = exports.usePURGE = exports.usePOST = exports.usePATCH = exports.useOPTIONS = exports.useLINK = exports.useHEAD = exports.useGET = exports.useMutate = exports.useDELETE = exports.useCode = exports.useData = exports.useError = exports.useFetch = exports.useConfig = exports.useLoading = exports.useFetchId = exports.useImperative = exports.useFetcher = exports.useFetcherMutate = exports.useFetcherCode = exports.useFetcherId = exports.useFetcherData = exports.useFetcherError = exports.useFetcherConfig = exports.useFetcherLoading = exports.fetcher = exports.revalidate = exports.mutateData = exports.FetcherConfig = exports.createHttpClient = exports.takeSnapshot = exports.getFilterValue = exports.getAtomValue = exports.useStorageItem = exports.useStorage = exports.useFilter = exports.storage = exports.filter = exports.useDispatch = exports.useActions = exports.useValue = exports.useAtom = exports.atom = exports.AtomicState = void 0;
+exports.useFetcherBlob = exports.useBlob = exports.setURLParams = exports.useUNLINK = exports.useResolve = exports.usePUT = exports.usePURGE = exports.usePOST = exports.usePATCH = exports.useOPTIONS = exports.useLINK = exports.useHEAD = exports.useGET = exports.useMutate = exports.useDELETE = exports.useCode = exports.useData = exports.useError = exports.useFetch = exports.useConfig = exports.useLoading = exports.useFetchId = exports.useImperative = exports.useFetcher = exports.useFetcherMutate = exports.useFetcherCode = exports.useFetcherId = exports.useFetcherData = exports.useFetcherError = exports.useFetcherConfig = exports.useFetcherLoading = exports.fetcher = exports.revalidate = exports.mutateData = exports.FetcherConfig = exports.createHttpClient = exports.takeSnapshot = exports.getFilterValue = exports.getAtomValue = exports.useStorageItem = exports.useStorage = exports.useFilter = exports.storage = exports.filter = exports.useDispatch = exports.useActions = exports.useValue = exports.useAtom = exports.atom = exports.AtomicState = void 0;
+exports.useObject = exports.useBoolean = exports.useWindowSize = exports.useText = exports.useFetcherText = void 0;
 var atomic_state_1 = require("atomic-state");
 Object.defineProperty(exports, "AtomicState", { enumerable: true, get: function () { return atomic_state_1.AtomicState; } });
 Object.defineProperty(exports, "atom", { enumerable: true, get: function () { return atomic_state_1.atom; } });
@@ -63,6 +64,11 @@ Object.defineProperty(exports, "usePURGE", { enumerable: true, get: function () 
 Object.defineProperty(exports, "usePUT", { enumerable: true, get: function () { return http_react_fetcher_1.usePUT; } });
 Object.defineProperty(exports, "useResolve", { enumerable: true, get: function () { return http_react_fetcher_1.useResolve; } });
 Object.defineProperty(exports, "useUNLINK", { enumerable: true, get: function () { return http_react_fetcher_1.useUNLINK; } });
+Object.defineProperty(exports, "setURLParams", { enumerable: true, get: function () { return http_react_fetcher_1.setURLParams; } });
+Object.defineProperty(exports, "useBlob", { enumerable: true, get: function () { return http_react_fetcher_1.useBlob; } });
+Object.defineProperty(exports, "useFetcherBlob", { enumerable: true, get: function () { return http_react_fetcher_1.useFetcherBlob; } });
+Object.defineProperty(exports, "useFetcherText", { enumerable: true, get: function () { return http_react_fetcher_1.useFetcherText; } });
+Object.defineProperty(exports, "useText", { enumerable: true, get: function () { return http_react_fetcher_1.useText; } });
 var react_1 = require("react");
 function useWindowSize() {
     var _a = (0, react_1.useState)({

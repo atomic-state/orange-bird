@@ -60,6 +60,11 @@ export {
   usePUT,
   useResolve,
   useUNLINK,
+  setURLParams,
+  useBlob,
+  useFetcherBlob,
+  useFetcherText,
+  useText,
 } from "http-react-fetcher"
 
 import { useState, useEffect } from "react"
