@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.useFetcherBlob = exports.useBlob = exports.setURLParams = exports.useUNLINK = exports.useResolve = exports.usePUT = exports.usePURGE = exports.usePOST = exports.usePATCH = exports.useOPTIONS = exports.useLINK = exports.useHEAD = exports.useGET = exports.useMutate = exports.useDELETE = exports.useCode = exports.useData = exports.useError = exports.useFetch = exports.useConfig = exports.useLoading = exports.useFetchId = exports.useImperative = exports.useFetcher = exports.useFetcherMutate = exports.useFetcherCode = exports.useFetcherId = exports.useFetcherData = exports.useFetcherError = exports.useFetcherConfig = exports.useFetcherLoading = exports.fetcher = exports.revalidate = exports.mutateData = exports.FetcherConfig = exports.createHttpClient = exports.takeSnapshot = exports.getFilterValue = exports.getAtomValue = exports.useStorageItem = exports.useStorage = exports.useFilter = exports.storage = exports.filter = exports.useDispatch = exports.useActions = exports.useValue = exports.useAtom = exports.atom = exports.AtomicState = void 0;
-exports.useWindowSize = exports.useObject = exports.useBoolean = exports.useText = exports.useFetcherText = void 0;
+exports.useWindowSize = exports.useObject = exports.useBoolean = exports.isFormData = exports.useText = exports.useFetcherText = void 0;
 var atomic_state_1 = require("atomic-state");
 Object.defineProperty(exports, "AtomicState", { enumerable: true, get: function () { return atomic_state_1.AtomicState; } });
 Object.defineProperty(exports, "atom", { enumerable: true, get: function () { return atomic_state_1.atom; } });
@@ -58,6 +58,7 @@ Object.defineProperty(exports, "useBlob", { enumerable: true, get: function () {
 Object.defineProperty(exports, "useFetcherBlob", { enumerable: true, get: function () { return http_react_fetcher_1.useFetcherBlob; } });
 Object.defineProperty(exports, "useFetcherText", { enumerable: true, get: function () { return http_react_fetcher_1.useFetcherText; } });
 Object.defineProperty(exports, "useText", { enumerable: true, get: function () { return http_react_fetcher_1.useText; } });
+Object.defineProperty(exports, "isFormData", { enumerable: true, get: function () { return http_react_fetcher_1.isFormData; } });
 var react_kuh_1 = require("react-kuh");
 Object.defineProperty(exports, "useBoolean", { enumerable: true, get: function () { return react_kuh_1.useBoolean; } });
 Object.defineProperty(exports, "useObject", { enumerable: true, get: function () { return react_kuh_1.useObject; } });

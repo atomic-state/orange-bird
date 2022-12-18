@@ -65,6 +65,8 @@ export {
   useFetcherBlob,
   useFetcherText,
   useText,
+  FetcherConfigType,
+  isFormData,
 } from "http-react-fetcher"
 
 export { useBoolean, useObject, useWindowSize } from "react-kuh"
